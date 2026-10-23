@@ -23,6 +23,7 @@ class RegistryTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name) / "repo"
         shutil.copytree(core.ROOT / "packages", self.root / "packages")
+        self.original_count = len(list((self.root / "packages").glob("*/*/manifest.json")))
         self.package = self.root / "packages/skills/tari-development"
 
     def manifest(self, change):
@@ -36,7 +37,7 @@ class RegistryTests(unittest.TestCase):
             core.validate(self.root)
 
     def test_valid_starters(self):
-        self.assertEqual(len(core.validate(self.root)), 3)
+        self.assertEqual(len(core.validate(self.root)), self.original_count)
 
     def test_unknown_manifest_field(self):
         self.manifest(lambda m: m.update(verified=True))
@@ -167,7 +168,7 @@ class RegistryTests(unittest.TestCase):
     def test_scaffold(self):
         for kind in ["agent", "skill", "mcp"]:
             create(self.root, kind, "new-entry", "kstrycharz")
-        self.assertEqual(len(core.validate(self.root)), 6)
+        self.assertEqual(len(core.validate(self.root)), self.original_count + 3)
         with self.assertRaises(ValueError):
             create(self.root, "skill", "../escape", "kstrycharz")
 

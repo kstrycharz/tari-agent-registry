@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "skill",
+  "id": "tari-ootle",
+  "name": "Tari Ootle Development",
+  "description": "Detailed Ootle Rust/WASM template development, resource and access rules, local tests, client transactions and wallet CLI guidance.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "maintainers": [
+    "kstrycharz"
+  ],
+  "entrypoint": "SKILL.md",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "SKILL.md",
+    "SECURITY_REVIEW.md"
+  ],
+  "permissions": [
+    "network:read",
+    "filesystem:read",
+    "filesystem:write",
+    "process:execute",
+    "wallet:read",
+    "wallet:sign",
+    "wallet:spend"
+  ],
+  "network_hosts": [
+    "ootle.tari.com",
+    "github.com",
+    "crates.io",
+    "index.crates.io",
+    "static.crates.io",
+    "static.rust-lang.org"
+  ],
+  "networks": [
+    "localnet",
+    "testnet"
+  ],
+  "tags": [
+    "tari",
+    "ootle",
+    "rust",
+    "wasm",
+    "templates",
+    "wallet",
+    "skill"
+  ],
+  "tari_references": [
+    "https://tari.com/",
+    "https://ootle.tari.com/"
+  ],
+  "compatibility": "Portable Markdown. Historical examples mention tari_template_lib 0.31 and tari_template_test_tooling 0.40; verify exact SDK/network compatibility before use. Examples were not compiled for this submission.",
+  "security_notes": "No bundled credentials or executable code were found. Instructions cover shell and wallet signing/spending workflows: require separate host authorization and explicit transaction consent. Local/testnet examples only; verify current fees and endpoints.",
+  "runtime": "instructions",
+  "status": "active"
+}

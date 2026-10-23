@@ -52,6 +52,9 @@ command indicators provide complementary checks. Dependency review checks new
 dependency risks. See the [security model](docs/security-model.md) for limitations
 and the required repository protection settings.
 
+The validator test suite includes malformed manifests, unsafe paths, credentials,
+version rollback attempts, deterministic archives and the reference MCP transport.
+
 The distribution feed is static JSON and ZIPs; the website stays independent.
 [TariTracker integration](docs/taritracker.md) includes a framework-neutral client
 that displays permissions and verifies downloads. [Maintainer setup](docs/setup.md)

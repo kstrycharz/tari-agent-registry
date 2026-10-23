@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "skill",
+  "id": "tari-development",
+  "name": "Tari Development",
+  "description": "Community Tari skill: Tari Development.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "maintainers": [
+    "kstrycharz"
+  ],
+  "entrypoint": "SKILL.md",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "SKILL.md"
+  ],
+  "permissions": [],
+  "network_hosts": [],
+  "networks": [
+    "none"
+  ],
+  "tags": [
+    "tari",
+    "skill"
+  ],
+  "tari_references": [
+    "https://tari.com/",
+    "https://ootle.tari.com/"
+  ],
+  "compatibility": "Portable Markdown instructions; configure host tools independently.",
+  "security_notes": "No credentials or automatic transactions. Review all files and host permissions before use.",
+  "runtime": "instructions",
+  "status": "active"
+}

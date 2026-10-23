@@ -1,0 +1,23 @@
+name: Propose an entry
+description: Discuss a Tari agent, MCP or skill before contributing.
+title: 'Entry proposal: '
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Entry kind
+      options: [Agent, MCP, Skill]
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Tari use case and official references
+    validations:
+      required: true
+  - type: textarea
+    id: permissions
+    attributes:
+      label: Required permissions, hosts and security considerations
+    validations:
+      required: true
